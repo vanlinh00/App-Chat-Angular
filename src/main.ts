@@ -1,6 +1,10 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
+import { AppComponent } from './app/app';  // sửa thành AppComponent
+import appRoutes from './app/app.routes'; // ✅ import mặc định không cần { }
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent)
+  .catch(err => console.error(err));
+
+bootstrapApplication(AppComponent, {
+  providers: [appRoutes]
+});

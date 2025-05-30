@@ -1,0 +1,111 @@
+🧠 MỤC TIÊU:
+Tạo một ứng dụng Angular đơn giản gồm:
+
+Trang Login để đăng nhập.
+
+Trang Chat sau khi đăng nhập.
+
+Điều hướng và kiểm tra trạng thái đăng nhập.
+
+🛠️ CÁC BƯỚC ĐÃ THỰC HIỆN
+1. Khởi tạo project Angular
+bash
+Copy
+Edit
+ng new chat-app
+Tạo cấu trúc thư mục chuẩn của Angular.
+
+Chọn SCSS, không chọn Zoneless app (để đơn giản).
+
+2. Tạo component Chat
+bash
+Copy
+Edit
+ng generate component chat
+Tạo 4 file chính:
+
+chat.ts (class component)
+
+chat.html (giao diện khung chat)
+
+chat.css (style đơn giản)
+
+chat.spec.ts (test, không cần dùng hiện tại)
+
+Bạn đã thêm nội dung giao diện đơn giản để mô phỏng khu vực chat.
+
+3. Tạo component Login
+bash
+Copy
+Edit
+ng generate component login
+Bạn đã tạo form đăng nhập đơn giản trong login.html, với:
+
+Input username, password
+
+Binding hai chiều bằng [(ngModel)]
+
+Xử lý lỗi hiển thị nếu đăng nhập sai
+
+Lưu ý: để dùng *ngIf và [(ngModel)], bạn đã thêm CommonModule và FormsModule vào imports.
+
+4. Cấu hình Routing
+Tạo file app.routes.ts với định nghĩa đường dẫn:
+
+ts
+Copy
+Edit
+import { Routes } from '@angular/router';
+import { LoginComponent } from './login/login';
+import { ChatComponent } from './chat/chat';
+
+export const AppRoutes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'chat', component: ChatComponent },
+];
+Và cấu hình trong main.ts:
+
+ts
+Copy
+Edit
+import { provideRouter } from '@angular/router';
+import { AppRoutes } from './app/app.routes';
+
+bootstrapApplication(AppComponent, {
+  providers: [provideRouter(AppRoutes)],
+});
+5. Tổ chức AppComponent
+html
+Copy
+Edit
+<!-- app.html -->
+<router-outlet></router-outlet>
+router-outlet giúp hiển thị các component con theo route (login, chat, ...)
+
+6. Logic đăng nhập (đơn giản)
+Trong login.ts:
+
+ts
+Copy
+Edit
+username = '';
+password = '';
+errorMessage = '';
+
+login() {
+  if (this.username === 'admin' && this.password === 'admin') {
+    this.router.navigate(['/chat']);
+  } else {
+    this.errorMessage = 'Sai tên đăng nhập hoặc mật khẩu';
+  }
+}
+Sau này, bạn có thể nâng cấp bằng cách dùng service và lưu localStorage để giữ đăng nhập.
+
+✅ KẾT QUẢ
+Truy cập http://localhost:4200 sẽ chuyển hướng sang /login
+
+Nhập đúng admin/admin → điều hướng đến trang chat.
+
+Giao diện đơn giản, rõ ràng, từng bước đều comment kỹ.
+

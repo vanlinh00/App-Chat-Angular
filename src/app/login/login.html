@@ -1,0 +1,32 @@
+<!-- Container chính của trang đăng nhập, căn giữa và bo viền -->
+<div style="max-width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+  <h2>Đăng nhập</h2>
+
+  <!-- Label và input cho tên đăng nhập -->
+  <!-- input dùng two-way binding với biến username trong component -->
+  <label for="username">Tên đăng nhập:</label><br/>
+  <input
+    id="username"
+    [(ngModel)]="username"
+    type="text"
+    placeholder="Nhập username"
+  /><br/><br/>
+
+  <!-- Label và input cho mật khẩu -->
+  <!-- input dùng two-way binding với biến password trong component -->
+  <label for="password">Mật khẩu:</label><br/>
+  <input
+    id="password"
+    [(ngModel)]="password"
+    type="password"
+    placeholder="Nhập password"
+  /><br/><br/>
+
+  <!-- Hiển thị thông báo lỗi nếu đăng nhập sai -->
+  <div style="color: red;" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Nút đăng nhập, khi click sẽ gọi hàm login() trong component -->
+  <button (click)="login()">Đăng nhập</button>
+</div>

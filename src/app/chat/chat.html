@@ -1,0 +1,29 @@
+<!-- Container chính của ứng dụng chat -->
+<div class="chat-container">
+
+  <!-- Tiêu đề của ứng dụng chat -->
+  <h2>Simple Angular Chat App</h2>
+
+  <!-- Khối hiển thị danh sách tin nhắn -->
+  <div class="chat-messages">
+    <!-- Duyệt qua mảng messages để hiển thị từng tin nhắn -->
+    <div class="message" *ngFor="let msg of messages">
+      {{ msg }}
+    </div>
+  </div>
+
+  <!-- Ô nhập tin nhắn và nút gửi -->
+  <div class="chat-input">
+    <!-- [(ngModel)] dùng để binding 2 chiều giữa input và biến inputMessage -->
+    <input
+      type="text"
+      [(ngModel)]="inputMessage"
+      (keydown.enter)="sendMessage()"
+      placeholder="Nhập tin nhắn..."
+    />
+
+    <!-- Nút gửi tin nhắn, gọi hàm sendMessage() khi click -->
+    <button (click)="sendMessage()">Gửi</button>
+  </div>
+
+</div>

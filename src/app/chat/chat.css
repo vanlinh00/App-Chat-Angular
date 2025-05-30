@@ -1,0 +1,67 @@
+/* ----------- Container chính của khung chat ----------- */
+.chat-container {
+  width: 400px;                   /* Đặt chiều rộng cố định cho khung chat */
+  margin: 40px auto;              /* Căn giữa khung chat theo chiều ngang, cách top 40px */
+  padding: 16px;                  /* Thêm khoảng đệm bên trong container */
+  border: 1px solid #ccc;         /* Đường viền xám nhạt bao quanh khung chat */
+  border-radius: 12px;            /* Bo tròn góc viền để nhìn mềm mại hơn */
+  background-color: #fafafa;      /* Màu nền sáng nhẹ, dễ nhìn */
+  font-family: Arial, sans-serif; /* Font chữ hiện đại, dễ đọc */
+}
+
+/* ----------- Tiêu đề phía trên khung chat ----------- */
+.chat-container h2 {
+  text-align: center;             /* Căn giữa tiêu đề */
+  margin-bottom: 16px;            /* Thêm khoảng cách giữa tiêu đề và phần tin nhắn */
+  color: #333;                    /* Màu chữ đậm hơn một chút */
+}
+
+/* ----------- Khu vực hiển thị danh sách tin nhắn ----------- */
+.chat-messages {
+  height: 250px;                  /* Cố định chiều cao để có scroll khi nhiều tin nhắn */
+  overflow-y: auto;               /* Hiển thị thanh cuộn dọc nếu vượt quá chiều cao */
+  border: 1px solid #ddd;         /* Viền xám nhạt bao quanh khung tin nhắn */
+  padding: 8px;                   /* Khoảng cách giữa viền và nội dung bên trong */
+  background-color: #fff;         /* Nền trắng để làm nổi bật tin nhắn */
+  margin-bottom: 12px;            /* Tạo khoảng cách giữa phần tin nhắn và input */
+  border-radius: 6px;             /* Bo tròn nhẹ góc viền */
+}
+
+/* ----------- Một tin nhắn riêng lẻ ----------- */
+.message {
+  padding: 6px 10px;              /* Đệm trong tin nhắn: 6px trên/dưới, 10px trái/phải */
+  margin-bottom: 4px;             /* Khoảng cách giữa các tin nhắn */
+  background-color: #e1f5fe;      /* Nền xanh nhạt dịu mắt cho mỗi tin nhắn */
+  border-radius: 6px;             /* Bo tròn các góc */
+  word-wrap: break-word;          /* Tự động xuống dòng nếu tin nhắn quá dài */
+}
+
+/* ----------- Khu vực nhập liệu và nút gửi ----------- */
+.chat-input {
+  display: flex;                  /* Hiển thị các phần tử con trên cùng một hàng */
+  gap: 8px;                       /* Khoảng cách giữa input và button */
+}
+
+/* ----------- Ô nhập tin nhắn ----------- */
+.chat-input input[type="text"] {
+  flex: 1;                        /* Input chiếm toàn bộ phần còn lại của hàng */
+  padding: 8px;                   /* Đệm trong input */
+  font-size: 14px;                /* Kích thước chữ vừa phải */
+  border-radius: 4px;             /* Bo nhẹ các góc */
+  border: 1px solid #ccc;         /* Viền xám nhạt */
+}
+
+/* ----------- Nút gửi tin nhắn ----------- */
+.chat-input button {
+  padding: 8px 12px;              /* Đệm trong: 8px trên/dưới, 12px trái/phải */
+  background-color: #2196f3;      /* Màu nền xanh dương chính */
+  color: white;                   /* Màu chữ trắng */
+  border: none;                   /* Loại bỏ viền mặc định */
+  border-radius: 4px;             /* Bo nhẹ các góc */
+  cursor: pointer;                /* Biến con trỏ thành bàn tay khi hover */
+}
+
+/* ----------- Hiệu ứng khi hover nút gửi ----------- */
+.chat-input button:hover {
+  background-color: #1976d2;      /* Màu nền đậm hơn khi rê chuột */
+}

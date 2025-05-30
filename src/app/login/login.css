@@ -1,0 +1,31 @@
+/* CSS cho phần login */
+/* Căn chỉnh tổng thể phần form */
+div {
+  background-color: #f9f9f9;
+}
+
+/* Style cho input */
+input {
+  width: 100%;            /* Chiều rộng 100% khung chứa */
+  padding: 8px;
+  box-sizing: border-box; /* Bao gồm padding trong width */
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Style cho nút đăng nhập */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* Màu xanh bootstrap */
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Hiệu ứng hover cho nút */
+button:hover {
+  background-color: #0056b3;
+}
