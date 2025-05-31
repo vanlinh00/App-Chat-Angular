@@ -1,17 +1,20 @@
 import { Routes } from '@angular/router';
-import { provideRouter } from '@angular/router';
 
 import { LoginComponent } from './login/login';
 import { ChatComponent } from './chat/chat';
+import { PrintComponent } from './print/print'; // thêm mới
 
-const routes: Routes = [
+
+export const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'chat', component: ChatComponent }
+  { path: 'chat', component: ChatComponent },
+    { path: 'print', component: PrintComponent }, // đường dẫn mới
+
 ];
 
-// ✅ Đây là export đúng
-export default provideRouter(routes);
+// // ✅ Đây là export đúng
+// export default provideRouter(routes);
 
 
 /*
